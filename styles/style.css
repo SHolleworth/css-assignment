@@ -1,0 +1,126 @@
+:root {
+    --body-color: rgba(230, 233, 235, 1);
+    --panel-color: white;
+    --scroll-bar-color: rgba(200, 200, 200, 1);
+    --shadow-color: rgba(0, 0, 0, .1);
+    --panel-border-radius: 5px;
+}
+
+body {
+    background-color: var(--body-color);
+}
+
+#container {
+    height: 98%;
+    padding: 20px 0 0 0;
+}
+
+.container--standard-layout {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container--news-freak-layout {
+    display: grid;
+    min-width: 1020px;
+    grid-template-columns: repeat(auto-fit, minmax(510px, 1fr));
+    grid-template-rows: 100%;
+}
+
+.container--cockpit-layout {
+    display: grid;
+    min-width: 1020px;
+    grid-template-columns: repeat(auto-fit, minmax(510px, 1fr));
+    grid-template-rows: 50% 50%;
+    gap: 20px;
+    column-gap: 0;
+}
+
+@media (min-width: 2550px) {
+    .container--news-freak-layout {
+        grid-template-columns: repeat(5, minmax(510px, 1fr));
+    }
+
+    .container--cockpit-layout {
+        grid-template-columns: repeat(5, minmax(510px, 1fr));
+    }
+}
+
+.header {
+    margin-bottom: 10px;
+    margin-right: 15px;
+    height: 50px;
+    background-color: var(--panel-color);
+    box-shadow: 2px 2px 5px var(--shadow-color);
+    grid-column: 1 / -1;
+}
+
+.large-feed {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 660px;
+    margin: 0 20px 0 20px;
+}
+
+.large-feed__panel-container {
+    flex: 1;
+    height: 95%;
+    grid-template-columns: repeat(auto-fit, minmax(12vw, 1fr));
+    overflow-y: auto;
+    display: grid;
+    padding-right: 10px;
+    gap: 10px;
+    row-gap: 0;
+}
+
+@media (min-width: 1800px) {
+    .large-feed__panel-container {
+        grid-template-columns: repeat(6, minmax(12vw, 1fr));
+    }
+}
+
+.large-feed__panel {
+    height: 10vw;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: var(--panel-border-radius);
+    background-color: var(--panel-color);
+    box-shadow: 2px 2px 5px var(--shadow-color);
+}
+
+.small-feed {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-width: 500px;
+    width: 500px;
+    margin: 0 20px 0 20px;
+}
+
+.small-feed__panel-container {
+    flex: 1;
+    overflow-y: auto;
+    flex-direction: column;
+    padding-right: 10px;
+}
+
+.small-feed__panel {
+    height: 100px;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: var(--panel-border-radius);
+    background-color: var(--panel-color);
+    box-shadow: 2px 2px 5px var(--shadow-color);
+}
+
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-bar-color);
+    border-radius: 5px;
+}
