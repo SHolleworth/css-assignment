@@ -10,8 +10,17 @@ body {
     background-color: var(--body-color);
 }
 
+header {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+header button {
+    padding: 10px 20px 10px 20px;
+}
+
 #container {
-    height: 98%;
+    height: 93%;
     padding: 20px 0 0 0;
 }
 
@@ -60,14 +69,14 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    min-width: 660px;
+    min-width: 850px;
     margin: 0 20px 0 20px;
 }
 
 .large-feed__panel-container {
     flex: 1;
     height: 95%;
-    grid-template-columns: repeat(auto-fit, minmax(12vw, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     overflow-y: auto;
     display: grid;
     padding-right: 10px;
@@ -75,16 +84,16 @@ body {
     row-gap: 0;
 }
 
-@media (min-width: 1800px) {
+/* @media (min-width: 2400px) {
     .large-feed__panel-container {
-        grid-template-columns: repeat(6, minmax(12vw, 1fr));
+        grid-template-columns: repeat(6, minmax(400px, 1fr));
     }
-}
+} */
 
 .large-feed__panel {
-    height: 10vw;
-    width: 100%;
     margin-bottom: 10px;
+    height: 10vw;
+    min-height: 200px;
     border-radius: var(--panel-border-radius);
     background-color: var(--panel-color);
     box-shadow: 2px 2px 5px var(--shadow-color);
@@ -115,7 +124,6 @@ body {
     box-shadow: 2px 2px 5px var(--shadow-color);
 }
 
-
 ::-webkit-scrollbar {
     width: 5px;
 }
@@ -123,4 +131,37 @@ body {
 ::-webkit-scrollbar-thumb {
     background-color: var(--scroll-bar-color);
     border-radius: 5px;
+}
+
+.reader__left-list {
+    flex: 1;
+    height: 100%;
+    border-top: solid 1px lightgrey;
+    background-color: var(--panel-color);
+}
+
+.reader__right-list {
+    flex: 2;
+    height: 100%;
+    overflow: auto;
+    border-top: solid 1px lightgrey;
+    background-color: var(--panel-color);
+}
+
+.reader__right-list::-webkit-scrollbar {
+    width: 0px;
+}
+
+.reader__right-list__item {
+    height: 120px;
+    border: solid 1px lightgrey;
+    border-top: 0px;
+}
+
+.reader__article {
+    flex: 5;
+    height: 100%;
+    border-top: solid 1px lightgrey;
+    background-color: var(--panel-color);
+    box-shadow: 2px 2px 5px var(--shadow-color);
 }
